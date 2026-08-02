@@ -1,6 +1,6 @@
 # My Portfolio
 
-This website showcases my projects and skills. Thanks for visiting!
+This website showcases my projects and skills. i am new and trying to save up for a bambu A2
 
 ## Preview
 
