@@ -1,94 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ismail Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+body {
+    background: #fbfbfd;
+}
+
+.glass {
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+.card {
+    transition: all .4s ease;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 60px rgba(0,0,0,.12);
+}
+
+.hero-text {
+    background: linear-gradient(90deg,#111,#777);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+</style>
+
 </head>
 
-<body class="bg-gray-100 font-sans">
 
-    <div class="max-w-6xl mx-auto p-10">
-
-        <!-- Title -->
-        <h1 class="text-5xl font-extrabold text-center text-gray-900">
-            MY PORTFOLIO
-        </h1>
-
-        <!-- Blue Line -->
-        <div class="w-40 h-1 bg-blue-500 mx-auto mt-4 mb-10 rounded"></div>
-
-        <!-- About Me -->
-        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
-
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">
-                About Me
-            </h2>
-
-            <p class="text-lg text-gray-700 leading-8">
-                Hi, I'm <span class="font-bold text-blue-600">Ismail</span>. I am 15 years old and this
-                portfolio showcases my skills, interests and projects.
-                I enjoy graphic design, coding, Blender and creating digital content.
-            </p>
-
-        </div>
-
-        <!-- My Work -->
-        <h2 class="text-4xl font-bold text-center mb-8">
-            My Work on Adobe Photoshop
-        </h2>
-                 <p class="text-lg text-gray-700 leading-8">
-                I study<span class="font-bold text-blue-600"> graphics design</span>. But I also have a passion for and put my creativity and initiative into my work and projects.
-            </p>
+<body class="font-sans text-gray-900">
 
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="max-w-7xl mx-auto px-8 py-12">
 
-            <!-- Nissan GTR -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:scale-105 transition duration-300">
 
-                <img
-                    src="nissan-gtr.png"
-                    alt="Nissan GTR"
-                    class="w-full h-80 object-cover">
 
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold mb-2">
-                        Nissan GTR Poster
-                    </h3>
+<!-- NAVBAR -->
 
-                    <p class="text-gray-600">
-                        A poster design featuring a modified Nissan GTR.
-                    </p>
-                </div>
+<nav class="flex justify-between items-center mb-24">
 
-            </div>
+<h2 class="text-2xl font-semibold">
+Ismail.
+</h2>
 
-            <!-- Miles Morales -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:scale-105 transition duration-300">
 
-                <img
-                    src="miles-morales.png"
-                    alt="Miles Morales"
-                    class="w-full h-80 object-cover">
+<div class="space-x-8 text-gray-500">
 
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold mb-2">
-                        Miles Morales Colour Pop
-                    </h3>
+<a>About</a>
+<a>Work</a>
+<a>Contact</a>
 
-                    <p class="text-gray-600">
-                        A colour-pop edit inspired by Spider-Man.
-                    </p>
-                </div>
+</div>
 
-            </div>
+</nav>
 
-        </div>
 
-    </div>
 
-</body>
-</html>
+
+
+
+
+<!-- HERO -->
+
+<section class="text-center mb-32">
+
+
+<h1 class="text-8xl font-semibold tracking-tight hero-text">
+
+Creative
+<br>
+Portfolio
+
+</h1>
+
+
+<p class="mt-8 text-2xl text-gray-500">
+
+Graphic Design • Photoshop • Blender • Digital Creation
+
+</p>
+
+
+<button class="mt-10 px-8 py-4 bg-black text-white rounded-full hover:scale-105 transition">
+
+View My Work
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ABOUT -->
+
+
+<section class="glass rounded-[40px] p-12 mb-28">
+
+
+<h2 class="text-5xl font-semibold mb-6">
+
+About Me
+
+</h2>
+
+
+<p class="text-xl text-gray-600 leading-9 max-w-4xl">
+
+Hi, I'm <b>Ismail</b>.
+I am a 15 year old graphic design student creating
+digital artwork, posters and creative projects.
+
+I enjoy experimenting with Photoshop, Blender,
+coding and modern digital design.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- SKILLS -->
+
+
+<section class="mb-28">
+
+
+<h2 class="text-5xl font-semibold mb-10">
+
+Skills
+
+</h2>
+
+
+
+
+
+
+
+
+<!-- WORK -->
+
+
+<section>
+
+
+<h2 class="text-6xl font-semibold mb-14">
+
+ Photoshop Work
+
+</h2>
+
+
+
+<div class="grid md:grid-cols-2 gap-12">
+
+
+
+
+
+
+<!-- PROJECT 1 -->
+
+
+<div class="card glass rounded-[40px] overflow-hidden">
+
+
+<img 
+src="nissan-gtr.png"
+class="w-full h-[450px] object-cover">
+
+
+<div class="p-10">
+
+
+<h3 class="text-4xl font-semibold">
+
+Nissan GTR
+
+</h3>
+
+
+<p class="text-gray-500 text-lg mt-4">
+
+A cinematic poster created using Photoshop.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- PROJECT 2 -->
+
+
+<div class="card glass rounded-[40px] overflow-hidden">
+
+
+<img 
+src="miles-morales.png"
+class="w-full h-[450px] object-cover">
+
+
+<div class="p-10">
+
+
+<h3 class="text-4xl font-semibold">
+
+Miles Morales
+
+</h3>
+
+
+<p class="text-gray-500 text-lg mt-4">
+
+A Spider-Man inspired colour pop artwork.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<footer class="text-center mt-32 text-gray-400">
+
+© 2026 Ismail Portfolio
+
+</footer>
+
