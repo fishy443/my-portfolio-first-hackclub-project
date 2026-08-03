@@ -4,4 +4,4 @@ This website showcases my projects and skills. i am new and trying to save up fo
 
 ## Preview
 
-![Website Preview](https://cdn.hackclub.com/019fc295-f13a-704f-9012-9f2f28d5052e/screenshot.png)
+https://www.w3schools.com/html/tryit.asp?filename=tryhtml_editor
