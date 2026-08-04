@@ -10,267 +10,189 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-
-body {
-    background: #fbfbfd;
+html{
+    scroll-behavior:smooth;
 }
 
-.glass {
-    background: rgba(255,255,255,0.72);
-    backdrop-filter: blur(25px);
-    border: 1px solid rgba(0,0,0,0.06);
+body{
+    background:#f8f8f8;
 }
 
-.card {
-    transition: all .4s ease;
+.glass{
+    background:rgba(255,255,255,0.8);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.5);
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
 
-.card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 30px 60px rgba(0,0,0,.12);
+.card{
+    transition:.35s ease;
 }
 
-.hero-text {
-    background: linear-gradient(90deg,#111,#777);
-    -webkit-background-clip:text;
-    color:transparent;
+.card:hover{
+    transform:translateY(-10px);
 }
-
 </style>
 
 </head>
 
-
 <body class="font-sans text-gray-900">
-
 
 <div class="max-w-7xl mx-auto px-8 py-12">
 
+    <!-- NAVBAR -->
 
+    <nav class="flex justify-between items-center mb-24">
 
-<!-- NAVBAR -->
+        <h2 class="text-2xl font-semibold">
+            Ismail.
+        </h2>
 
-<nav class="flex justify-between items-center mb-24">
+        <div class="space-x-8 text-gray-500">
+            <a href="#about" class="hover:text-black transition">About</a>
+            <a href="#work" class="hover:text-black transition">Work</a>
+            <a href="#contact" class="hover:text-black transition">Contact</a>
+        </div>
 
-<h2 class="text-2xl font-semibold">
-Ismail.
-</h2>
+    </nav>
 
+    <!-- HERO -->
 
-<div class="space-x-8 text-gray-500">
+    <section class="text-center mb-32">
 
-<a>About</a>
-<a>Work</a>
-<a>Contact</a>
+        <h1 class="text-8xl font-semibold tracking-tight">
+            Creative
+            <br>
+            Portfolio
+        </h1>
+
+        <p class="mt-8 text-2xl text-gray-500">
+            Graphic Design • Photoshop • Marketing • Digital Creation
+        </p>
+
+        <a href="#work"
+           class="inline-block mt-10 px-8 py-4 bg-black text-white rounded-full hover:scale-105 transition duration-300">
+            View My Work
+        </a>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about" class="glass rounded-[40px] p-12 mb-28">
+
+        <h2 class="text-5xl font-semibold mb-6">
+            About Me
+        </h2>
+
+        <p class="text-xl text-gray-600 leading-9 max-w-4xl">
+            Hi, I'm <b>Ismail</b>.
+            I am a 15 year old graphic design student creating
+            digital artwork, posters and creative projects.
+            <br><br>
+            I enjoy experimenting with Photoshop, After Effects,
+            Premiere Pro and modern digital design.
+        </p>
+
+    </section>
+
+    <!-- WORK -->
+
+    <section id="work">
+
+        <h2 class="text-6xl font-semibold mb-14">
+            Photoshop Work
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-12">
+
+            <!-- PROJECT 1 -->
+
+            <div class="card glass rounded-[40px] overflow-hidden">
+
+                <img
+                    src="nissan-gtr.png"
+                    alt="Nissan GTR Poster"
+                    class="w-full h-[450px] object-cover">
+
+                <div class="p-10">
+
+                    <h3 class="text-4xl font-semibold">
+                        Nissan GTR
+                    </h3>
+
+                    <p class="text-gray-500 text-lg mt-4">
+                        A cinematic poster created using Photoshop.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 2 -->
+
+            <div class="card glass rounded-[40px] overflow-hidden">
+
+                <img
+                    src="miles-morales.png"
+                    alt="Miles Morales Poster"
+                    class="w-full h-[450px] object-cover">
+
+                <div class="p-10">
+
+                    <h3 class="text-4xl font-semibold">
+                        Miles Morales
+                    </h3>
+
+                    <p class="text-gray-500 text-lg mt-4">
+                        A Spider-Man inspired colour pop artwork.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="text-center mt-32">
+
+        <h2 class="text-5xl font-semibold mb-6">
+            Contact
+        </h2>
+
+        <p class="text-xl text-gray-500 mb-10">
+           
+        </p>
+
+        <a href="https://www.tiktok.com/@ismail.ahmed2832"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="inline-block bg-black text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-gray-800 hover:scale-105 transition duration-300">
+         TikTok
+        </a>
+
+    </section>
+    
+    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="inline-block bg-black text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-gray-800 hover:scale-105 transition duration-300">
+         Ismailahmed21321@gmail.com
+        </a>
+
+    </section>
+    <!-- FOOTER -->
+
+    <footer class="text-center mt-32 text-gray-400">
+        © 2026 Ismail Portfolio
+    </footer>
 
 </div>
 
-</nav>
-
-
-
-
-
-
-
-<!-- HERO -->
-
-<section class="text-center mb-32">
-
-
-<h1 class="text-8xl font-semibold tracking-tight hero-text">
-
-Creative
-<br>
-Portfolio
-
-</h1>
-
-
-<p class="mt-8 text-2xl text-gray-500">
-
-Graphic Design • Photoshop • Blender • Digital Creation
-
-</p>
-
-
-<button class="mt-10 px-8 py-4 bg-black text-white rounded-full hover:scale-105 transition">
-
-View My Work
-
-</button>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- ABOUT -->
-
-
-<section class="glass rounded-[40px] p-12 mb-28">
-
-
-<h2 class="text-5xl font-semibold mb-6">
-
-About Me
-
-</h2>
-
-
-<p class="text-xl text-gray-600 leading-9 max-w-4xl">
-
-Hi, I'm <b>Ismail</b>.
-I am a 15 year old graphic design student creating
-digital artwork, posters and creative projects.
-
-I enjoy experimenting with Photoshop, Blender,
-coding and modern digital design.
-
-</p>
-
-
-</section>
-
-
-
-
-
-
-
-
-<!-- SKILLS -->
-
-
-<section class="mb-28">
-
-
-<h2 class="text-5xl font-semibold mb-10">
-
-Skills
-
-</h2>
-
-
-
-
-
-
-
-
-<!-- WORK -->
-
-
-<section>
-
-
-<h2 class="text-6xl font-semibold mb-14">
-
- Photoshop Work
-
-</h2>
-
-
-
-<div class="grid md:grid-cols-2 gap-12">
-
-
-
-
-
-
-<!-- PROJECT 1 -->
-
-
-<div class="card glass rounded-[40px] overflow-hidden">
-
-
-<img 
-src="nissan-gtr.png"
-class="w-full h-[450px] object-cover">
-
-
-<div class="p-10">
-
-
-<h3 class="text-4xl font-semibold">
-
-Nissan GTR
-
-</h3>
-
-
-<p class="text-gray-500 text-lg mt-4">
-
-A cinematic poster created using Photoshop.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- PROJECT 2 -->
-
-
-<div class="card glass rounded-[40px] overflow-hidden">
-
-
-<img 
-src="miles-morales.png"
-class="w-full h-[450px] object-cover">
-
-
-<div class="p-10">
-
-
-<h3 class="text-4xl font-semibold">
-
-Miles Morales
-
-</h3>
-
-
-<p class="text-gray-500 text-lg mt-4">
-
-A Spider-Man inspired colour pop artwork.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<footer class="text-center mt-32 text-gray-400">
-
-© 2026 Ismail Portfolio
-
-</footer>
-
+</body>
+</html>
