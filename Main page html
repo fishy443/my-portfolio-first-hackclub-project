@@ -15,11 +15,11 @@
         }
 
         body {
-            background: #f8f8f8;
+            background: hsl(0, 0%, 96%);
         }
 
         .glass {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgb(245, 242, 242);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.5);
@@ -70,190 +70,110 @@
 
         <!-- HERO -->
         <section class="text-center mb-32">
-
             <h1 class="text-6xl md:text-8xl font-semibold tracking-tight">
-                Creative
+                Video 
                 <br>
-                Portfolio
+               Editing
             </h1>
 
             <p class="mt-8 text-xl md:text-2xl text-gray-500">
-                Graphic Design • Photoshop • Marketing • Digital Creation
+                • Marketing • Digital Creation
             </p>
-
-            <a href="#work"
-               class="inline-block mt-10 px-8 py-4 bg-black text-white rounded-full hover:scale-105 transition duration-300">
-
-                View My Work
-
-            </a>
-
-        </section>
-
-
-
-        <!-- ABOUT -->
-        <section id="about" class="glass rounded-[40px] p-8 md:p-12 mb-28">
-
-            <h2 class="text-4xl md:text-5xl font-semibold mb-6">
-                About Me
-            </h2>
-
-            <p class="text-lg md:text-xl text-gray-600 leading-9 max-w-4xl">
-
-                Hi, I'm <b>Ismail</b>.
-
-                I am a 15 year old graphic design student creating
-                digital artwork, posters and creative projects.
-
-                <br><br>
-
-                I enjoy experimenting with Photoshop, After Effects,
-                Premiere Pro and modern digital design.
-
-            </p>
-
-        </section>
-
-
-
-        <!-- WORK -->
-        <section id="work">
-
-            <h2 class="text-5xl md:text-6xl font-semibold mb-14">
-                Photoshop Work
-            </h2>
-
-
-            <div class="grid md:grid-cols-2 gap-12">
-
-
-                <!-- PROJECT 1 - NISSAN GTR -->
-                <div class="card glass rounded-[40px] overflow-hidden">
-
-                    <img
-                        src="./nissan gtr.png"
-                        alt="Nissan GTR Poster"
-                        class="w-full h-[450px] object-cover"
-                    >
-
-                    <div class="p-10">
-
-                        <h3 class="text-4xl font-semibold">
-                            Nissan GTR
-                        </h3>
-
-                        <p class="text-gray-500 text-lg mt-4">
-                            A cinematic poster created using Photoshop.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- PROJECT 2 - MILES MORALES -->
-                <div class="card glass rounded-[40px] overflow-hidden">
-
-                    <img
-                        src="./miles colour pop (1).png"
-                        alt="Miles Morales Pop Art"
-                        class="w-full h-[450px] object-cover"
-                    >
-
-                    <div class="p-10">
-
-                        <h3 class="text-4xl font-semibold">
-                            Miles Morales
-                        </h3>
-
-                        <p class="text-gray-500 text-lg mt-4">
-                            A Spider-Man inspired colour pop artwork.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- VIDEO EDITING -->
-        <section class="text-center mt-20">
-
-            <h2 class="text-4xl font-semibold mb-6">
-                Video Editing
-            </h2>
-
-            <p class="text-lg text-gray-500 mb-8">
-                I also create and edit videos using Premiere Pro and After Effects.
-            </p>
-
-            <a
-                href=""
-                class="inline-flex items-center justify-center bg-black text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-gray-800 hover:scale-105 transition duration-300"
-            >
-                Video Editing
-            </a>
-
-        </section>
-
-
-
-        <!-- CONTACT -->
-        <section id="contact" class="text-center mt-32">
-
-            <h2 class="text-5xl font-semibold mb-6">
-                Contact
-            </h2>
-
-            <p class="text-xl text-gray-500 mb-10">
-                Get in touch or check out my work.
-            </p>
-
-
-            <div class="flex flex-wrap justify-center gap-6">
-
-
-                <!-- TIKTOK -->
-                <a
-                    href="https://www.tiktok.com/@ismail.ahmed2832"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center bg-black text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-gray-800 hover:scale-105 transition duration-300"
-                >
-                    TikTok
-                </a>
-
-
-                <!-- EMAIL -->
-                <a
-                    href="mailto:Ismailahmed21321@gmail.com"
-                    class="inline-flex items-center justify-center bg-black text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-gray-800 hover:scale-105 transition duration-300"
-                >
-                    Email Me
-                </a>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- FOOTER -->
-        <footer class="text-center mt-32 text-gray-400">
-
-            © 2026 Ismail Portfolio
-
-        </footer>
-
+            
+            
+
+               
+<!-- PROJECT - MILES MORALES EDIT -->
+<div class="card glass rounded-[40px] overflow-hidden">
+
+    <!-- Video -->
+    <video
+        controls
+        class="w-full h-[450px] object-cover"
+    >
+        <source src="video.mp4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Project Info -->
+    <div class="p-8">
+
+  
+        </p>
+
+        <h2 class="text-3xl font-bold mb-3">
+            Miles Morales Okay edit
+        </h2>
+
+        <p class="text-gray-600 text-lg mb-5">
+            Made using Premiere Pro and posted on TikTok.
+        </p>
+
+       
 
     </div>
+</div>
 
-</body>
 
-</html>
+<!-- PROJECT - MILES MORALES EDIT -->
+<div class="card glass rounded-[40px] overflow-hidden">
+
+    <!-- Video -->
+    <video
+        controls
+        class="w-full h-[450px] object-cover"
+    >
+        <source src="d&g.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Project Info -->
+    <div class="p-8">
+
+  
+        </p>
+
+        <h2 class="text-3xl font-bold mb-3">
+            Miles Dolce & Gabbana Edit
+        </h2>
+
+        <p class="text-gray-600 text-lg mb-5">
+            Made using Capcut pc (no pro) and posted on TikTok.
+        </p>
+
+       
+
+    </div>
+</div>
+
+<!-- Video -->
+    <video
+        controls
+        class="w-full h-[450px] object-cover"
+    >
+        <source src="20 min edit.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Project Info -->
+    <div class="p-8">
+
+  
+        </p>
+
+        <h2 class="text-3xl font-bold mb-3">
+            Miles 20 Mins (Lil uzi vert) Edit
+        </h2>
+
+        <p class="text-gray-600 text-lg mb-5">
+            Made using Capcut pc (no pro) and posted on TikTok.
+        </p>
+
+       
+
+    </div>
+</div>
+
+
+
+   
