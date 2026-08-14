@@ -3,7 +3,10 @@
 This website showcases my projects and skills. i am new and trying to save up for a creatlity via Macando 
 
  pictures nissan gtr and miles colour pop (1)
+
+ after countless minutes i have made a minimal and simplistic ui (user interface) 
  
 ## Preview
-<img width="991" height="787" alt="Screenshot 2026-08-12 124954" src="https://github.com/user-attachments/assets/1de647c7-57b5-46f0-954c-7ece093fba47" />
+<img width="568" height="835" alt="Screenshot 2026-08-14 163432" src="https://github.com/user-attachments/assets/d02ddc1c-e49e-480a-ad4b-a9902931545f" />
+
 
