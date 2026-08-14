@@ -1,3 +1,5 @@
+
+   
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,171 +11,694 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+
     <style>
+
         html {
             scroll-behavior: smooth;
         }
 
         body {
-            background: hsl(0, 0%, 96%);
+            background: #f7f7f4;
+            color: #111111;
+            font-family: 'DM Sans', sans-serif;
         }
 
-        .glass {
-            background: rgb(245, 242, 242);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        /* -------------------------
+           HAND DRAWN EFFECTS
+        ------------------------- */
+
+        .marker {
+            font-family: 'Permanent Marker', cursive;
         }
+
+        .rough-border {
+            border: 3px solid #111;
+            border-radius: 18px 14px 20px 15px;
+        }
+
+        .rough-border-small {
+            border: 2px solid #111;
+            border-radius: 12px 9px 13px 10px;
+        }
+
+        /* -------------------------
+           CARDS
+        ------------------------- */
 
         .card {
-            transition: 0.35s ease;
+            background: white;
+            border: 3px solid #111;
+            border-radius: 24px 18px 25px 20px;
+            box-shadow: 8px 8px 0 #111;
+            transition: 0.25s ease;
         }
 
         .card:hover {
-            transform: translateY(-10px);
+            transform: translate(-5px, -7px) rotate(-0.5deg);
+            box-shadow: 13px 13px 0 #111;
         }
+
+        /* -------------------------
+           BUTTONS
+        ------------------------- */
+
+        .comic-button {
+            display: inline-block;
+            border: 3px solid #111;
+            border-radius: 999px;
+            box-shadow: 5px 5px 0 #111;
+            transition: 0.2s ease;
+        }
+
+        .comic-button:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 8px 8px 0 #111;
+        }
+
+        .comic-button:active {
+            transform: translate(3px, 3px);
+            box-shadow: 2px 2px 0 #111;
+        }
+
+        /* -------------------------
+           NAV
+        ------------------------- */
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 3px;
+            background: #2563eb;
+            transition: 0.25s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* -------------------------
+           HERO
+        ------------------------- */
+
+        .hero-title {
+            font-size: clamp(4rem, 11vw, 9rem);
+            line-height: 0.85;
+            font-weight: 700;
+            letter-spacing: -7px;
+        }
+
+        .blue-word {
+            color: #2563eb;
+            position: relative;
+            display: inline-block;
+        }
+
+        .blue-word::after {
+            content: "";
+            position: absolute;
+            left: -4px;
+            right: -4px;
+            bottom: -12px;
+            height: 9px;
+            background: #facc15;
+            border-radius: 50%;
+            transform: rotate(-2deg);
+        }
+
+        /* -------------------------
+           DOODLES
+        ------------------------- */
+
+        .doodle-star {
+            position: absolute;
+            font-size: 55px;
+            font-weight: bold;
+            color: #facc15;
+            -webkit-text-stroke: 3px #111;
+            transform: rotate(15deg);
+        }
+
+    
+
+        .scribble {
+            font-family: 'Permanent Marker', cursive;
+            transform: rotate(-4deg);
+        }
+
+        /* -------------------------
+           SECTION LABEL
+        ------------------------- */
+
+        .label {
+            display: inline-block;
+            padding: 6px 14px;
+            background: #111;
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 6px 9px 7px 8px;
+            transform: rotate(-2deg);
+        }
+
+        /* -------------------------
+           ABOUT
+        ------------------------- */
+
+        .about-box {
+            background: #dbeafe;
+            border: 3px solid #111;
+            box-shadow: 8px 8px 0 #111;
+            border-radius: 25px 20px 28px 22px;
+        }
+
+        /* -------------------------
+           PROJECT IMAGE
+        ------------------------- */
+
+        .project-image {
+            border-bottom: 3px solid #111;
+            transition: 0.3s ease;
+        }
+
+        .card:hover .project-image {
+            transform: scale(1.02);
+        }
+
+        /* -------------------------
+           VIDEO SECTION
+        ------------------------- */
+
+        .video-box {
+            background: #fef08a;
+            border: 3px solid #111;
+            box-shadow: 9px 9px 0 #111;
+            border-radius: 25px 20px 27px 22px;
+        }
+
+        /* -------------------------
+           CONTACT
+        ------------------------- */
+
+        .contact-box {
+            border-top: 3px solid #111;
+            border-bottom: 3px solid #111;
+            padding: 70px 20px;
+        }
+
+        /* -------------------------
+           SMALL ANIMATION
+        ------------------------- */
+
+        .float {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0) rotate(5deg);
+            }
+
+            50% {
+                transform: translateY(-8px) rotate(-5deg);
+            }
+        }
+
     </style>
+
 </head>
 
 
-<body class="font-sans text-gray-900">
+<body>
+
 
     <!-- MAIN CONTAINER -->
-    <div class="max-w-7xl mx-auto px-8 py-12">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 py-10">
 
 
-        <!-- NAVBAR -->
-        <nav class="flex justify-between items-center mb-24">
+        <!-- =========================
+             NAVBAR
+        ========================== -->
 
-            <h2 class="text-2xl font-semibold">
-                Ismail.
-            </h2>
+        <nav class="flex justify-between items-center mb-28">
 
-            <div class="space-x-8 text-gray-500">
-                <a href="#about" class="hover:text-black transition">
+            <a href="#" class="text-3xl font-bold tracking-tight">
+                Ismail<span class="text-blue-600">.</span>
+            </a>
+
+
+            <div class="hidden md:flex gap-10 font-semibold text-gray-600">
+
+                <a href="#about" class="nav-link hover:text-black transition">
                     About
                 </a>
 
-                <a href="#work" class="hover:text-black transition">
+                <a href="#work" class="nav-link hover:text-black transition">
                     Work
                 </a>
 
-                <a href="#contact" class="hover:text-black transition">
+                <a href="#contact" class="nav-link hover:text-black transition">
                     Contact
                 </a>
+
             </div>
 
         </nav>
 
 
 
-        <!-- HERO -->
-        <section class="text-center mb-32">
-            <h1 class="text-6xl md:text-8xl font-semibold tracking-tight">
-                Video 
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="relative text-center mb-40">
+
+
+            <!-- Doodles -->
+
+            <div class="doodle-star hidden md:block top-0 left-10 float">
+                ★
+            </div>
+
+            <div class="doodle-circle hidden md:block top-20 right-20">
+            </div>
+
+
+            <p class="font-bold tracking-widest text-sm text-blue-600 mb-8">
+                CREATIVE DESIGNER / EDITOR
+            </p>
+
+        
+
+            <h1 class="hero-title">
+
+         
+     
+                Creative
+    
                 <br>
-               Editing
+                <span class="blue-word">
+                    Portfolio
+                </span>
+
             </h1>
 
-            <p class="mt-8 text-xl md:text-2xl text-gray-500">
-                • Marketing • Digital Creation
+
+            <p class="max-w-2xl mx-auto mt-12 text-lg md:text-xl text-gray-500 leading-8">
+
+                Graphic design, Photoshop artwork, video editing
+                and digital creations.
+
             </p>
-            
-            
 
-               
-<!-- PROJECT - MILES MORALES EDIT -->
-<div class="card glass rounded-[40px] overflow-hidden">
 
-    <!-- Video -->
-    <video
-        controls
-        class="w-full h-[450px] object-cover"
-    >
-        <source src="video.mp4.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+            <a
+                href="#work"
+                class="comic-button mt-9 px-8 py-4 bg-yellow-300 font-bold text-lg"
+            >
 
-    <!-- Project Info -->
-    <div class="p-8">
+                View My Work →
 
-  
-        </p>
+            </a>
 
-        <h2 class="text-3xl font-bold mb-3">
-            Miles Morales Okay edit
-        </h2>
 
-        <p class="text-gray-600 text-lg mb-5">
-            Made using Premiere Pro and posted on TikTok.
-        </p>
+            <p class="scribble text-xl mt-10 text-gray-500">
+                scroll down ↓
+            </p>
 
-       
+        </section>
+
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section id="about" class="mb-36">
+
+
+            <div class="mb-8">
+
+                <span class="label">
+                    01 — ABOUT
+                </span>
+
+            </div>
+
+
+            <div class="about-box p-8 md:p-14">
+
+                <div class="grid md:grid-cols-3 gap-10 items-center">
+
+
+                    <div class="md:col-span-1">
+
+                        <h2 class="text-5xl md:text-6xl font-bold leading-none">
+
+                            A little
+                            <br>
+
+                            <span class="text-blue-600">
+                                about me.
+                            </span>
+
+                        </h2>
+
+                    </div>
+
+
+                    <div class="md:col-span-2">
+
+                        <p class="text-lg md:text-xl text-gray-700 leading-9">
+
+                            Hi, I'm <b>Ismail</b>.
+
+                            I am a 15 year old graphic design student creating
+                            digital artwork, posters and creative projects.
+
+                            <br><br>
+
+                            I enjoy experimenting with Photoshop, After Effects,
+                            Premiere Pro and modern digital design.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             WORK
+        ========================== -->
+
+        <section id="work" class="mb-36">
+
+
+            <div class="flex justify-between items-end mb-12">
+
+                <div>
+
+                    <span class="label">
+                        02 — MY WORK
+                    </span>
+
+                    <h2 class="text-5xl md:text-7xl font-bold mt-7 tracking-tight">
+
+                        Photoshop
+                        <span class="text-blue-600">
+                            Work
+                        </span>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="hidden md:block marker text-2xl rotate-[-5deg]">
+
+                    made in Photoshop
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROJECT GRID -->
+
+            <div class="grid md:grid-cols-2 gap-12">
+
+
+                <!-- =========================
+                     PROJECT 1
+                ========================== -->
+
+                <div class="card overflow-hidden">
+
+                    <img
+                        src="./nissan gtr.png"
+                        alt="Nissan GTR Poster"
+                        class="project-image w-full h-[450px] object-cover"
+                    >
+
+
+                    <div class="p-8 md:p-10">
+
+
+                        <div class="flex justify-between items-start gap-4">
+
+                            <div>
+
+                                <p class="text-sm font-bold text-red-500 mb-3">
+                                    PROJECT 01
+                                </p>
+
+                                <h3 class="text-4xl font-bold">
+                                    Nissan GTR
+                                </h3>
+
+                            </div>
+
+
+                            <div
+                                class="rough-border-small px-4 py-2 font-bold text-sm bg-red-400"
+                            >
+                                POSTER
+                            </div>
+
+                        </div>
+
+
+                        <p class="text-gray-500 text-lg mt-5 leading-7">
+
+                            A cinematic poster created using Photoshop.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     PROJECT 2
+                ========================== -->
+
+                <div class="card overflow-hidden">
+
+                    <img
+                        src="./miles colour pop (1).png"
+                        alt="Miles Morales Pop Art"
+                        class="project-image w-full h-[450px] object-cover"
+                    >
+
+
+                    <div class="p-8 md:p-10">
+
+
+                        <div class="flex justify-between items-start gap-4">
+
+                            <div>
+
+                                <p class="text-sm font-bold text-blue-600 mb-3">
+                                    PROJECT 02
+                                </p>
+
+                                <h3 class="text-4xl font-bold">
+                                    Miles Morales
+                                </h3>
+
+                            </div>
+
+
+                            <div
+                                class="rough-border-small px-4 py-2 font-bold text-sm bg-blue-300"
+                            >
+                                POP ART
+                            </div>
+
+                        </div>
+
+
+                        <p class="text-gray-500 text-lg mt-5 leading-7">
+
+                            A Spider-Man inspired colour pop artwork.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             VIDEO EDITING
+        ========================== -->
+
+        <section class="mb-36">
+
+
+            <div class="video-box p-10 md:p-16 text-center relative overflow-hidden">
+
+
+                <div class="doodle-circle hidden md:block -right-10 -top-10">
+                </div>
+
+
+                <span class="label">
+                    03 — VIDEO
+                </span>
+
+
+                <h2 class="text-5xl md:text-7xl font-bold mt-8">
+
+                    Video
+                    <span class="text-red-500">
+                        Editing
+                    </span>
+
+                </h2>
+
+
+                <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-600 mt-7 leading-8">
+
+                    I also create and edit videos using Premiere Pro
+                    and CapCut, while considering learning After Effects.
+
+                </p>
+
+
+                <a
+                    href="Video Editing.html"
+                    class="comic-button mt-9 px-8 py-4 bg-red-400 font-bold text-lg"
+                >
+
+                    Enter Video Editing →
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section id="contact" class="contact-box text-center">
+
+
+            <span class="label">
+                04 — CONTACT
+            </span>
+
+
+            <h2 class="text-6xl md:text-8xl font-bold mt-8 tracking-tight">
+
+                Let's make
+                <br>
+
+                <span class="text-blue-600">
+                    something cool.
+                </span>
+
+            </h2>
+
+
+            <p class="text-lg md:text-xl text-gray-500 mt-8 mb-10">
+
+                Get in touch or check out my work.
+
+            </p>
+
+
+            <div class="flex flex-wrap justify-center gap-6">
+
+
+                <!-- TIKTOK -->
+
+                <a
+                    href="https://www.tiktok.com/@ismail.ahmed2832"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="comic-button px-8 py-4 bg-black text-white font-bold"
+                >
+
+                    TikTok ↗
+
+                </a>
+
+
+                <!-- EMAIL -->
+
+                <a
+                    href="mailto:Ismailahmed21321@gmail.com"
+                    class="comic-button px-8 py-4 bg-blue-500 text-white font-bold"
+                >
+
+                    Email Me →
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer class="text-center py-12">
+
+            <p class="font-bold text-lg">
+                Ismail<span class="text-blue-600">.</span>
+            </p>
+
+            <p class="text-gray-400 mt-2">
+                © 2026 Ismail Portfolio
+            </p>
+
+            <p class="marker text-gray-400 mt-4 text-sm">
+                designed & created by me
+            </p>
+
+        </footer>
+
 
     </div>
-</div>
 
+ <p class="text-gray-400 mt-2">
+                © Chat gpt Was used to help create IDEAS for this portfolio, but the design and code was created by me
+            </p> 
+</body>
 
-<!-- PROJECT - MILES MORALES EDIT -->
-<div class="card glass rounded-[40px] overflow-hidden">
-
-    <!-- Video -->
-    <video
-        controls
-        class="w-full h-[450px] object-cover"
-    >
-        <source src="d&g.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <!-- Project Info -->
-    <div class="p-8">
-
-  
-        </p>
-
-        <h2 class="text-3xl font-bold mb-3">
-            Miles Dolce & Gabbana Edit
-        </h2>
-
-        <p class="text-gray-600 text-lg mb-5">
-            Made using Capcut pc (no pro) and posted on TikTok.
-        </p>
-
-       
-
-    </div>
-</div>
-
-<!-- Video -->
-    <video
-        controls
-        class="w-full h-[450px] object-cover"
-    >
-        <source src="20 min edit.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <!-- Project Info -->
-    <div class="p-8">
-
-  
-        </p>
-
-        <h2 class="text-3xl font-bold mb-3">
-            Miles 20 Mins (Lil uzi vert) Edit
-        </h2>
-
-        <p class="text-gray-600 text-lg mb-5">
-            Made using Capcut pc (no pro) and posted on TikTok.
-        </p>
-
-       
-
-    </div>
-</div>
-
-
-
-   
+</html>
