@@ -1,272 +1,1030 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ismail Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+<title>Ismail Portfolio</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 
-    <style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        html {
-            scroll-behavior: smooth;
-        }
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;900&family=Permanent+Marker&display=swap"
+    rel="stylesheet"
+>
 
-        body {
-            background: #f7f7f4;
-            color: #111111;
-            font-family: 'DM Sans', sans-serif;
-        }
+<style>
 
-        /* -------------------------
-           HAND DRAWN EFFECTS
-        ------------------------- */
+/* =====================================================
+   GLOBAL
+===================================================== */
 
-        .marker {
-            font-family: 'Permanent Marker', cursive;
-        }
+* {
+    box-sizing: border-box;
 
-        .rough-border {
-            border: 3px solid #111;
-            border-radius: 18px 14px 20px 15px;
-        }
+    cursor: url('https://cdn.cursors-4u.net/previews/starry-sun-c5238d99-32.webp') 32 32, auto !important;
+}
 
-        .rough-border-small {
-            border: 2px solid #111;
-            border-radius: 12px 9px 13px 10px;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        /* -------------------------
-           CARDS
-        ------------------------- */
+body {
+    margin: 0;
+    background: #f7f7f4;
+    color: #111;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
 
-        .card {
-            background: white;
-            border: 3px solid #111;
-            border-radius: 24px 18px 25px 20px;
-            box-shadow: 8px 8px 0 #111;
-            transition: 0.25s ease;
-        }
 
-        .card:hover {
-            transform: translate(-5px, -7px) rotate(-0.5deg);
-            box-shadow: 13px 13px 0 #111;
-        }
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
-        /* -------------------------
-           BUTTONS
-        ------------------------- */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 
-        .comic-button {
-            display: inline-block;
-            border: 3px solid #111;
-            border-radius: 999px;
-            box-shadow: 5px 5px 0 #111;
-            transition: 0.2s ease;
-        }
+    padding: 22px 36px;
 
-        .comic-button:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 8px 8px 0 #111;
-        }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        .comic-button:active {
-            transform: translate(3px, 3px);
-            box-shadow: 2px 2px 0 #111;
-        }
+    z-index: 200;
 
-        /* -------------------------
-           NAV
-        ------------------------- */
+    mix-blend-mode: multiply;
+}
 
-        .nav-link {
-            position: relative;
-        }
+.nav-link {
+    position: relative;
+    color: #111;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
 
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 0;
-            height: 3px;
-            background: #2563eb;
-            transition: 0.25s ease;
-        }
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: #2563eb;
+    transition: .25s ease;
+}
 
-        .nav-link:hover::after {
-            width: 100%;
-        }
+.nav-link:hover::after {
+    width: 100%;
+}
 
-        /* -------------------------
-           HERO
-        ------------------------- */
 
-        .hero-title {
-            font-size: clamp(4rem, 11vw, 9rem);
-            line-height: 0.85;
-            font-weight: 700;
-            letter-spacing: -7px;
-        }
+/* =====================================================
+   BUTTON
+===================================================== */
 
-        .blue-word {
-            color: #2563eb;
-            position: relative;
-            display: inline-block;
-        }
+.comic-button {
+    display: inline-block;
 
-        .blue-word::after {
-            content: "";
-            position: absolute;
-            left: -4px;
-            right: -4px;
-            bottom: -12px;
-            height: 9px;
-            background: #facc15;
-            border-radius: 50%;
-            transform: rotate(-2deg);
-        }
+    border: 3px solid #111;
+    border-radius: 999px;
 
-        /* -------------------------
-           ANIMATED CIRCLE (around "Portfolio")
-        ------------------------- */
+    box-shadow: 5px 5px 0 #111;
 
-        .portfolio-wrap {
-            position: relative;
-            display: inline-block;
-        }
+    transition: .2s ease;
+}
 
-        .circle-svg {
-            position: absolute;
-            top: -45%;
-            left: -20%;
-            width: 140%;
-            height: 190%;
-            overflow: visible;
-            pointer-events: none;
-        }
+.comic-button:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0 #111;
+}
 
-        .circle-path {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            animation: draw-circle 1.3s ease-out forwards;
-            animation-delay: 0.6s;
-        }
+.comic-button:active {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0 #111;
+}
 
-        @keyframes draw-circle {
-            to {
-                stroke-dashoffset: 0;
-            }
-        }
 
-        /* -------------------------
-           DOODLES
-        ------------------------- */
-        
-        .doodle-star {
-            position: absolute;
-            font-size: 55px;
-            font-weight: bold;
-            color: #facc15;
-            -webkit-text-stroke: 3px #111;
-            transform: rotate(15deg);
-        }
+/* =====================================================
+   HERO
+===================================================== */
 
-        .scribble {
-            font-family: 'Permanent Marker', cursive;
-            transform: rotate(-4deg);
-        }
+.hero {
+    min-height: 100vh;
 
-        /* -------------------------
-           SECTION LABEL
-        ------------------------- */
+    padding:
+        70px
+        30px
+        60px;
 
-        .label {
-            display: inline-block;
-            padding: 6px 14px;
-            background: #111;
-            color: white;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            border-radius: 6px 9px 7px 8px;
-            transform: rotate(-2deg);
-        }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-        /* -------------------------
-           ABOUT
-        ------------------------- */
+    position: relative;
 
-        .about-box {
-            background: #dbeafe;
-            border: 3px solid #111;
-            box-shadow: 8px 8px 0 #111;
-            border-radius: 25px 20px 28px 22px;
-        }
+    overflow: visible;
 
-        /* -------------------------
-           PROJECT IMAGE
-        ------------------------- */
+    z-index: 1;
+}
 
-        .project-image {
-            border-bottom: 3px solid #111;
-            transition: 0.3s ease;
-        }
 
-        .card:hover .project-image {
-            transform: scale(1.02);
-        }
+/*
+   Keeps the hero visually centered while
+   leaving the lanyard on the left.
+*/
 
-        /* -------------------------
-           VIDEO SECTION
-        ------------------------- */
+.hero-content {
+    position: relative;
+    z-index: 2;
 
-        .video-box {
-            background: #fef08a;
-            border: 3px solid #111;
-            box-shadow: 9px 9px 0 #111;
-            border-radius: 25px 20px 27px 22px;
-        }
+    transform: translateX(20px);
+}
 
-        /* -------------------------
-           CONTACT
-        ------------------------- */
 
-        .contact-box {
-            border-top: 3px solid #111;
-            border-bottom: 3px solid #111;
-            padding: 70px 20px;
-        }
+.hero-title {
+    font-size: clamp(4rem, 10vw, 9rem);
 
-        /* -------------------------
-           SMALL ANIMATION
-        ------------------------- */
+    line-height: .84;
 
-        .float {
-            animation: floating 3s ease-in-out infinite;
-        }
+    font-weight: 900;
 
-        @keyframes floating {
-            0%, 100% {
-                transform: translateY(0) rotate(5deg);
-            }
+    letter-spacing: -7px;
 
-            50% {
-                transform: translateY(-8px) rotate(-5deg);
-            }
-        }
+    text-align: center;
 
-    </style>
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   PORTFOLIO CIRCLE
+===================================================== */
+
+.portfolio-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.circle-svg {
+    position: absolute;
+
+    top: -42%;
+    left: -18%;
+
+    width: 136%;
+    height: 185%;
+
+    overflow: visible;
+
+    pointer-events: none;
+}
+
+.circle-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+
+    animation:
+        draw-circle 1.3s ease-out forwards;
+
+    animation-delay: .6s;
+}
+
+@keyframes draw-circle {
+
+    to {
+        stroke-dashoffset: 0;
+    }
+
+}
+
+
+/* =====================================================
+   STAR
+===================================================== */
+
+.doodle-star {
+    position: absolute;
+
+    top: 48px;
+    left: 28%;
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    color: #facc15;
+
+    -webkit-text-stroke: 3px #111;
+
+    transform: rotate(15deg);
+
+    z-index: 2;
+}
+
+.float {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-8px)
+            rotate(-5deg);
+    }
+
+}
+
+.scribble {
+    font-family:
+        'Permanent Marker',
+        cursive;
+
+    transform: rotate(-4deg);
+}
+
+
+/* =====================================================
+   SECTION LABEL
+===================================================== */
+
+.label {
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    background: #111;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    border-radius:
+        6px 9px 7px 8px;
+
+    transform: rotate(-2deg);
+}
+
+
+/* =====================================================
+   LANYARD
+===================================================== */
+
+/*
+   IMPORTANT:
+   Much narrower than before.
+   Sits on the extreme left.
+*/
+
+.lanyard-section {
+
+    position: fixed;
+
+    top: 0;
+
+    left: -12px;
+
+    width: 200px;
+
+    height: 900px;
+
+    z-index: 150;
+
+    pointer-events: none;
+
+    overflow: visible;
+
+    touch-action: none;
+}
+
+
+/* =====================================================
+   RIG
+   Everything (straps + tag) lives inside this. It only
+   ever rotates around its own top-center point, which is
+   the fixed anchor/pivot at the top of the strap. Dragging
+   the tag changes this rotation AND stretches the strap
+   height + tag offset, so the whole thing behaves like an
+   elastic lanyard pivoting from the tip of the strap.
+===================================================== */
+
+.lanyard-rig {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 190px;
+    height: 850px;
+
+    transform-origin:
+        top center;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    animation:
+
+        rigDrop
+        1.4s
+        cubic-bezier(.2,.9,.25,1.25)
+        forwards;
+
+    animation-delay: .6s;
+}
+
+.lanyard-rig.settled {
+
+    opacity: 1;
+
+    animation:
+
+        rigWobble
+        5s
+        ease-in-out
+        infinite;
+}
+
+.lanyard-rig.dragging {
+
+    animation: none;
+
+    opacity: 1;
+}
+
+.lanyard-rig.returning {
+
+    transition:
+        transform .55s cubic-bezier(.34,1.56,.64,1);
+}
+
+
+@keyframes rigDrop {
+
+    0% {
+
+        transform:
+            rotate(-14deg);
+
+        opacity: 0;
+    }
+
+    65% {
+
+        transform:
+            rotate(6deg);
+
+        opacity: 1;
+    }
+
+    82% {
+
+        transform:
+            rotate(-3deg);
+    }
+
+    100% {
+
+        transform:
+            rotate(0deg);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes rigWobble {
+
+    0%,
+    100% {
+
+        transform: rotate(-1.5deg);
+    }
+
+    50% {
+
+        transform: rotate(1.5deg);
+    }
+}
+
+
+/* =====================================================
+   STRAPS
+   Anchored at the top; height is what stretches.
+===================================================== */
+
+.strap-left,
+.strap-right {
+
+    position: absolute;
+
+    top: 0;
+
+    width: 26px;
+
+    height: 340px;
+
+    background: #2563eb;
+
+    border: 3px solid #111;
+
+    border-radius: 4px;
+
+    z-index: 1;
+}
+
+.strap-left,
+.strap-right {
+
+    transition:
+        height .55s cubic-bezier(.34,1.56,.64,1);
+}
+
+.lanyard-rig.dragging .strap-left,
+.lanyard-rig.dragging .strap-right {
+
+    transition: none;
+}
+
+
+/*
+   STRAPS SIT CLOSE TOGETHER
+*/
+
+.strap-left {
+
+    left: 66px;
+}
+
+
+.strap-right {
+
+    left: 93px;
+}
+
+
+/* =====================================================
+   STRAP HIGHLIGHT
+===================================================== */
+
+.strap-left::after,
+.strap-right::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 5px;
+
+    width: 6px;
+
+    height: 100%;
+
+    background:
+        rgba(255,255,255,.35);
+
+    border-radius: 2px;
+}
+
+
+/* =====================================================
+   TAG (connector + card)
+   Sits at the tip of the strap; "top" is what stretches.
+===================================================== */
+
+.lanyard-tag {
+
+    position: absolute;
+
+    top: 340px;
+
+    left: 0;
+
+    width: 190px;
+
+    z-index: 6;
+
+    cursor: grab;
+
+    pointer-events: auto;
+
+    touch-action: none;
+
+    transition:
+        top .55s cubic-bezier(.34,1.56,.64,1);
+}
+
+.lanyard-rig.dragging .lanyard-tag {
+
+    cursor: grabbing;
+
+    transition: none;
+}
+
+
+/* =====================================================
+   CONNECTOR
+===================================================== */
+
+.connector {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 51px;
+
+    width: 74px;
+
+    height: 74px;
+
+    background: #fbbf24;
+
+    border:
+        5px solid #111;
+
+    border-radius:
+        18px 11px 20px 13px;
+
+    z-index: 5;
+
+    box-shadow:
+        5px 5px 0 #111;
+}
+
+
+.connector-hole {
+
+    position: absolute;
+
+    top: 9px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 36px;
+
+    height: 36px;
+
+    border:
+        5px solid #111;
+
+    border-radius: 50%;
+
+    background: #fff;
+}
+
+
+/* =====================================================
+   ABOUT ME CARD
+   TRUE 9:16
+===================================================== */
+
+.id-card {
+
+    position: absolute;
+
+    top: 50px;
+
+    left: 3px;
+
+    width: 175px;
+
+    aspect-ratio: 9 / 16;
+
+    background: white;
+
+    border:
+        5px solid #111;
+
+    border-radius:
+        22px 13px 26px 16px;
+
+    padding: 16px;
+
+    z-index: 10;
+
+    box-shadow:
+        9px 10px 0 #111;
+
+    overflow: hidden;
+
+    transform:
+        rotate(2deg);
+}
+
+
+/* =====================================================
+   CARD DECORATION
+===================================================== */
+
+.id-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 103px;
+
+    height: 103px;
+
+    background: #2563eb;
+
+    border-radius: 50%;
+
+    right: -51px;
+
+    top: -51px;
+}
+
+
+.id-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 65px;
+
+    height: 65px;
+
+    background: #facc15;
+
+    border-radius: 50%;
+
+    left: -32px;
+
+    bottom: -32px;
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.card-content {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.card-label {
+
+    font-size: 7.5px;
+
+    letter-spacing: 1.2px;
+
+    font-weight: 900;
+
+    color: #2563eb;
+}
+
+
+.card-title {
+
+    font-family:
+        'Permanent Marker',
+        cursive;
+
+    font-size: 28px;
+
+    line-height: .9;
+
+    font-weight: 400;
+
+    letter-spacing: -.5px;
+
+    margin:
+        8px 0 17px;
+
+    color: #e8483a;
+
+    transform: rotate(-2deg);
+}
+
+
+.card-name {
+
+    font-size: 11.5px;
+
+    font-weight: 900;
+}
+
+
+.card-text {
+
+    font-size: 8.8px;
+
+    line-height: 1.35;
+
+    color: #555;
+
+    margin-top: 8px;
+}
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.skills {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 4px;
+
+    margin-top: 10px;
+}
+
+
+.skill {
+
+    background: #111;
+
+    color: white;
+
+    padding:
+        4px 6px;
+
+    border-radius: 20px;
+
+    font-size: 6.5px;
+
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   LANYARD DROP
+===================================================== */
+
+@keyframes lanyardDrop {
+
+    0% {
+
+        transform:
+            translateY(-500px)
+            rotate(-8deg);
+
+        opacity: 0;
+    }
+
+    65% {
+
+        transform:
+            translateY(15px)
+            rotate(4deg);
+
+        opacity: 1;
+    }
+
+    82% {
+
+        transform:
+            translateY(-5px)
+            rotate(-2deg);
+    }
+
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   LANYARD SWING
+===================================================== */
+
+@keyframes lanyardSwing {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-1.2deg);
+    }
+
+    50% {
+        transform: rotate(1.2deg);
+    }
+
+    75% {
+        transform: rotate(-.8deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+/* =====================================================
+   PROJECT CARDS
+===================================================== */
+
+.card {
+
+    background: white;
+
+    border:
+        3px solid #111;
+
+    border-radius:
+        24px 18px 25px 20px;
+
+    box-shadow:
+        8px 8px 0 #111;
+
+    transition:
+        .25s ease;
+}
+
+
+.card:hover {
+
+    transform:
+        translate(-5px,-7px)
+        rotate(-.5deg);
+
+    box-shadow:
+        13px 13px 0 #111;
+}
+
+
+.project-image {
+
+    border-bottom:
+        3px solid #111;
+
+    transition:
+        .3s ease;
+}
+
+
+.card:hover .project-image {
+
+    transform:
+        scale(1.02);
+}
+
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.video-box {
+
+    background: #fef08a;
+
+    border:
+        3px solid #111;
+
+    box-shadow:
+        9px 9px 0 #111;
+
+    border-radius:
+        25px 20px 27px 22px;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-box {
+
+    border-top:
+        3px solid #111;
+
+    border-bottom:
+        3px solid #111;
+
+    padding:
+        70px 20px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    nav {
+
+        padding:
+            18px 20px;
+    }
+
+
+    .hero {
+
+        padding:
+            100px 20px 60px;
+    }
+
+
+    .hero-content {
+
+        transform:
+            translateX(0);
+    }
+
+
+    .hero-title {
+
+        letter-spacing:
+            -5px;
+    }
+
+
+    .lanyard-section {
+
+        left: -18px;
+
+        width: 165px;
+
+        height: 700px;
+    }
+
+
+    .lanyard-rig {
+
+        transform-origin:
+            top left;
+
+        scale: .78;
+    }
+
+
+    .doodle-star {
+
+        display: none;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL SCREENS
+===================================================== */
+
+@media (max-width: 450px) {
+
+    .lanyard-section {
+
+        left: -28px;
+    }
+
+    .lanyard-rig {
+
+        scale: .65;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -274,94 +1032,238 @@
 <body>
 
 
-    <!-- MAIN CONTAINER -->
-    <div class="max-w-7xl mx-auto px-6 md:px-10 py-10">
+<!-- =====================================================
+     LANYARD
+===================================================== -->
+
+<div class="lanyard-section">
+
+    <div class="lanyard-rig">
 
 
-        <!-- =========================
-             NAVBAR
-        ========================== -->
+        <!-- STRAPS -->
 
-        <nav class="flex justify-between items-center mb-28">
+        <div class="strap-left"></div>
 
-            <a href="#" class="text-3xl font-bold tracking-tight">
-                Ismail<span class="text-blue-600">.</span>
-            </a>
+        <div class="strap-right"></div>
 
 
-            <div class="hidden md:flex gap-10 font-semibold text-gray-600">
+        <!-- DRAGGABLE TAG (connector + card) -->
 
-                <a href="#about" class="nav-link hover:text-black transition">
-                    About
-                </a>
+        <div class="lanyard-tag">
 
-                <a href="#work" class="nav-link hover:text-black transition">
-                    Work
-                </a>
 
-                <a href="#contact" class="nav-link hover:text-black transition">
-                    Contact
-                </a>
+            <!-- CONNECTOR -->
+
+            <div class="connector">
+
+                <div class="connector-hole"></div>
 
             </div>
 
-        </nav>
+
+            <!-- ABOUT ME CARD -->
+
+            <div class="id-card">
+
+                <div class="card-content">
+
+                    <div class="card-label">
+                        PORTFOLIO ID
+                    </div>
 
 
+                    <div class="card-title">
+                        ABOUT
+                        <br>
+                        ME.
+                    </div>
 
-        <!-- =========================
-             HERO
-        ========================== -->
 
-        <section class="relative text-center mb-40">
+                    <div class="card-name">
+                        HI, I'M ISMAIL.
+                    </div>
 
 
-            <!-- Doodles -->
+                    <div class="card-text">
 
-            <div class="doodle-star hidden md:block top-0 left-10 float">
-                ★
+                        I'm a 15 year old creative
+                        who enjoys video editing,
+                        graphic design, motion
+                        graphics and experimenting
+                        with new ideas.
+
+                        <br><br>
+
+                        This portfolio is a collection
+                        of projects I've created and
+                        things I'm learning.
+
+                    </div>
+
+
+                    <div class="skills">
+
+                        <div class="skill">
+                            VIDEO
+                        </div>
+
+                        <div class="skill">
+                            PHOTOSHOP
+                        </div>
+
+                        <div class="skill">
+                            MOTION
+                        </div>
+
+                        <div class="skill">
+                            3D
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="doodle-circle hidden md:block top-20 right-20">
-            </div>
+        </div>
+
+    </div>
+
+</div>
 
 
-            <p class="font-bold tracking-widest text-sm text-blue-600 mb-8">
-                CREATIVE DESIGNER / EDITOR
-            </p>
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<div class="max-w-7xl mx-auto px-6 md:px-10 py-10">
 
 
-            <h1 class="hero-title">
-                Creative<br/>
-                <span class="portfolio-wrap">
-                    Portfolio
-                    <svg class="circle-svg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                        <path
-                            class="circle-path"
-                            d="M200,15
-                               C300,15 380,55 380,100
-                               C380,148 300,185 200,185
-                               C100,185 20,148 20,100
-                               C20,52 100,15 200,15
-                               Z"
-                            fill="none"
-                            stroke="#e8483a"
-                            stroke-width="10"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                    </svg>
-                </span>
-            </h1>
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <a
+        href="#"
+        class="text-3xl font-bold tracking-tight"
+    >
+
+        Ismail<span class="text-blue-600">.</span>
+
+    </a>
 
 
-            <p class="max-w-2xl mx-auto mt-12 text-lg md:text-xl text-gray-500 leading-8">
+    <div
+        class="hidden md:flex gap-10 font-semibold text-gray-600"
+    >
 
-                Graphic design, Photoshop artwork, video editing
-                and digital creations.
+        <a
+            href="#work"
+            class="nav-link"
+        >
+            Work
+        </a>
 
-            </p>
 
+        <a
+            href="#contact"
+            class="nav-link"
+        >
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+
+    <!-- STAR -->
+
+    <div class="doodle-star hidden md:block float">
+        ★
+    </div>
+
+
+    <div class="hero-content">
+
+
+        <!-- LABEL -->
+
+        <p
+            class="font-bold tracking-widest text-sm text-blue-600 mb-8 text-center"
+        >
+
+            CREATIVE DESIGNER / EDITOR
+
+        </p>
+
+
+        <!-- TITLE -->
+
+        <h1 class="hero-title">
+
+            Perfect
+
+            <br>
+
+
+            <span class="portfolio-wrap">
+
+                Portfolio
+
+
+                <svg
+                    class="circle-svg"
+                    viewBox="0 0 400 200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none"
+                >
+
+                    <path
+                        class="circle-path"
+
+                        d="
+                            M200,15
+                            C300,15 380,55 380,100
+                            C380,148 300,185 200,185
+                            C100,185 20,148 20,100
+                            C20,52 100,15 200,15
+                            Z
+                        "
+
+                        fill="none"
+
+                        stroke="#e8483a"
+
+                        stroke-width="10"
+
+                        stroke-linecap="round"
+
+                        stroke-linejoin="round"
+                    />
+
+                </svg>
+
+            </span>
+
+        </h1>
+
+
+        <!-- WORK BUTTON -->
+
+        <div class="text-center">
 
             <a
                 href="#work"
@@ -372,404 +1274,595 @@
 
             </a>
 
+        </div>
 
-            <p class="scribble text-xl mt-10 text-gray-500">
-                scroll down ↓
-            </p>
 
-        </section>
+        <!-- SCROLL -->
 
+        <p
+            class="scribble text-xl mt-10 text-gray-500 text-center"
+        >
 
+            scroll down ↓
 
-        <!-- =========================
-             ABOUT
-        ========================== -->
+        </p>
 
-        <section id="about" class="mb-36">
 
+    </div>
 
-            <div class="mb-8">
+</section>
 
-                <span class="label">
-                    01 — ABOUT
-                </span>
 
-            </div>
 
+<!-- =====================================================
+     WORK
+===================================================== -->
 
-            <div class="about-box p-8 md:p-14">
+<section
+    id="work"
+    class="mb-36"
+>
 
-                <div class="grid md:grid-cols-3 gap-10 items-center">
 
+    <div
+        class="flex justify-between items-end mb-12"
+    >
 
-                    <div class="md:col-span-1">
-
-                        <h2 class="text-5xl md:text-6xl font-bold leading-none">
-
-                            A little
-                            <br>
-
-                            <span class="text-blue-600">
-                                about me.
-                            </span>
-
-                        </h2>
-
-                    </div>
-
-
-                    <div class="md:col-span-2">
-
-                        <p class="text-lg md:text-xl text-gray-700 leading-9">
-
-                            Hi, I'm <b>Ismail</b>.
-
-                            I am a 15 year old graphic design student creating
-                            digital artwork, posters and creative projects.
-
-                            <br><br>
-
-                            I enjoy experimenting with Photoshop, After Effects,
-                            Premiere Pro and modern digital design.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             WORK
-        ========================== -->
-
-        <section id="work" class="mb-36">
-
-
-            <div class="flex justify-between items-end mb-12">
-
-                <div>
-
-                    <span class="label">
-                        02 — MY WORK
-                    </span>
-
-                    <h2 class="text-5xl md:text-7xl font-bold mt-7 tracking-tight">
-
-                        Photoshop
-                        <span class="text-blue-600">
-                            Work
-                        </span>
-
-                    </h2>
-
-                </div>
-
-
-                <div class="hidden md:block marker text-2xl rotate-[-5deg]">
-
-                    made in Photoshop
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PROJECT GRID -->
-
-            <div class="grid md:grid-cols-2 gap-12">
-
-
-                <!-- =========================
-                     PROJECT 1
-                ========================== -->
-
-                <div class="card overflow-hidden">
-
-                    <img
-                        src="./nissan gtr.png"
-                        alt="Nissan GTR Poster"
-                        class="project-image w-full h-[450px] object-cover"
-                    >
-
-
-                    <div class="p-8 md:p-10">
-
-
-                        <div class="flex justify-between items-start gap-4">
-
-                            <div>
-
-                                <p class="text-sm font-bold text-red-500 mb-3">
-                                    PROJECT 01
-                                </p>
-
-                                <h3 class="text-4xl font-bold">
-                                    Nissan GTR
-                                </h3>
-
-                            </div>
-
-
-                            <div
-                                class="rough-border-small px-4 py-2 font-bold text-sm bg-red-400"
-                            >
-                                POSTER
-                            </div>
-
-                        </div>
-
-
-                        <p class="text-gray-500 text-lg mt-5 leading-7">
-
-                            A cinematic poster created using Photoshop.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- =========================
-                     PROJECT 2
-                ========================== -->
-
-                <div class="card overflow-hidden">
-
-                    <img
-                        src="./miles colour pop (1).png"
-                        alt="Miles Morales Pop Art"
-                        class="project-image w-full h-[450px] object-cover"
-                    >
-
-
-                    <div class="p-8 md:p-10">
-
-
-                        <div class="flex justify-between items-start gap-4">
-
-                            <div>
-
-                                <p class="text-sm font-bold text-blue-600 mb-3">
-                                    PROJECT 02
-                                </p>
-
-                                <h3 class="text-4xl font-bold">
-                                    Miles Morales
-                                </h3>
-
-                            </div>
-
-
-                            <div
-                                class="rough-border-small px-4 py-2 font-bold text-sm bg-blue-300"
-                            >
-                                POP ART
-                            </div>
-
-                        </div>
-
-
-                        <p class="text-gray-500 text-lg mt-5 leading-7">
-
-                            A Spider-Man inspired colour pop artwork.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             VIDEO EDITING
-        ========================== -->
-
-        <section class="mb-36">
-
-
-            <div class="video-box p-10 md:p-16 text-center relative overflow-hidden">
-
-
-                <div class="doodle-circle hidden md:block -right-10 -top-10">
-                </div>
-
-
-                <span class="label">
-                    03 — VIDEO
-                </span>
-
-
-                <h2 class="text-5xl md:text-7xl font-bold mt-8">
-
-                    Video
-                    <span class="text-red-500">
-                        Editing
-                    </span>
-
-                </h2>
-
-
-                <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-600 mt-7 leading-8">
-
-                    I also create and edit videos using Premiere Pro
-                    and CapCut, while considering learning After Effects.
-
-                </p>
-
-
-                <a
-                    href="Video Editing.html"
-                    class="comic-button mt-9 px-8 py-4 bg-red-400 font-bold text-lg"
-                >
-
-                    Enter Video Editing →
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             CONTACT
-        ========================== -->
-
-        <section id="contact" class="contact-box text-center">
-
+        <div>
 
             <span class="label">
-                04 — CONTACT
+                01 — MY WORK
             </span>
 
 
-            <h2 class="text-6xl md:text-8xl font-bold mt-8 tracking-tight">
+            <h2
+                class="text-5xl md:text-7xl font-bold mt-7 tracking-tight"
+            >
 
-                Let's make
-                <br>
+                Photoshop
 
                 <span class="text-blue-600">
-                    something cool.
+                    Work
                 </span>
 
             </h2>
 
-
-            <p class="text-lg md:text-xl text-gray-500 mt-8 mb-10">
-
-                Get in touch or check out my work.
-
-            </p>
+        </div>
 
 
-            <div class="flex flex-wrap justify-center gap-6">
+        <div
+            class="hidden md:block"
+            style="
+                font-family:'Permanent Marker',cursive;
+                font-size:24px;
+                transform:rotate(-5deg);
+            "
+        >
+
+            made in Photoshop
+
+        </div>
+
+    </div>
 
 
-                <!-- TIKTOK -->
 
-                <a
-                    href="https://www.tiktok.com/@ismail.ahmed2832"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="comic-button px-8 py-4 bg-black text-white font-bold"
+    <!-- PROJECT GRID -->
+
+    <div
+        class="grid md:grid-cols-2 gap-12"
+    >
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="card overflow-hidden">
+
+            <img
+                src="./nissan gtr.png"
+                alt="Nissan GTR Poster"
+                class="project-image w-full h-[450px] object-cover"
+            >
+
+
+            <div class="p-8 md:p-10">
+
+                <div
+                    class="flex justify-between items-start gap-4"
                 >
 
-                    TikTok ↗
+                    <div>
 
-                </a>
+                        <p
+                            class="text-sm font-bold text-red-500 mb-3"
+                        >
+
+                            PROJECT 01
+
+                        </p>
 
 
-                <!-- EMAIL -->
+                        <h3
+                            class="text-4xl font-bold"
+                        >
 
-                <a
-                    href="mailto:Ismailahmed21321@gmail.com"
-                    class="comic-button px-8 py-4 bg-blue-500 text-white font-bold"
+                            Nissan GTR
+
+                        </h3>
+
+                    </div>
+
+
+                    <div
+                        class="px-4 py-2 font-bold text-sm bg-red-400"
+                        style="
+                            border:2px solid #111;
+                            border-radius:
+                            12px 9px 13px 10px;
+                        "
+                    >
+
+                        POSTER
+
+                    </div>
+
+                </div>
+
+
+                <p
+                    class="text-gray-500 text-lg mt-5 leading-7"
                 >
 
-                    Email Me →
+                    A cinematic poster created using Photoshop.
 
-                </a>
+                </p>
 
             </div>
 
-        </section>
+        </div>
 
 
 
-        <!-- =========================
-             FOOTER
-        ========================== -->
+        <!-- PROJECT 2 -->
 
-        <footer class="text-center py-12">
+        <div class="card overflow-hidden">
 
-            <p class="font-bold text-lg">
-                Ismail<span class="text-blue-600">.</span>
-            </p>
+            <img
+                src="./miles colour pop (1).png"
+                alt="Miles Morales Pop Art"
+                class="project-image w-full h-[450px] object-cover"
+            >
 
-            <p class="text-gray-400 mt-2">
-                © 2026 Ismail Portfolio
-            </p>
 
-            <p class="marker text-gray-400 mt-4 text-sm">
-                designed & created by me
-            </p>
+            <div class="p-8 md:p-10">
 
-        </footer>
+                <div
+                    class="flex justify-between items-start gap-4"
+                >
 
+                    <div>
+
+                        <p
+                            class="text-sm font-bold text-blue-600 mb-3"
+                        >
+
+                            PROJECT 02
+
+                        </p>
+
+
+                        <h3
+                            class="text-4xl font-bold"
+                        >
+
+                            Miles Morales
+
+                        </h3>
+
+                    </div>
+
+
+                    <div
+                        class="px-4 py-2 font-bold text-sm bg-blue-300"
+                        style="
+                            border:2px solid #111;
+                            border-radius:
+                            12px 9px 13px 10px;
+                        "
+                    >
+
+                        POP ART
+
+                    </div>
+
+                </div>
+
+
+                <p
+                    class="text-gray-500 text-lg mt-5 leading-7"
+                >
+
+                    A Spider-Man inspired colour pop artwork.
+
+                </p>
+
+            </div>
+
+        </div>
 
     </div>
 
-    <p class="text-gray-400 mt-2 text-center">
-        © Chat gpt Was used to help create IDEAS for this portfolio, but the design and code was created by me
+</section>
+
+
+
+<!-- =====================================================
+     VIDEO EDITING
+===================================================== -->
+
+<section class="mb-36">
+
+    <div
+        class="video-box p-10 md:p-16 text-center"
+    >
+
+        <span class="label">
+            02 — VIDEO
+        </span>
+
+
+        <h2
+            class="text-5xl md:text-7xl font-bold mt-8"
+        >
+
+            Video
+
+            <span class="text-red-500">
+                Editing
+            </span>
+
+        </h2>
+
+
+        <p
+            class="max-w-2xl mx-auto text-lg md:text-xl text-gray-600 mt-7 leading-8"
+        >
+
+            I also create and edit videos using
+            Premiere Pro and CapCut, while
+            considering learning After Effects.
+
+        </p>
+
+
+        <a
+            href="Video Editing.html"
+            class="comic-button mt-9 px-8 py-4 bg-red-400 font-bold text-lg"
+        >
+
+            Enter Video Editing →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+    id="contact"
+    class="contact-box text-center"
+>
+
+    <span class="label">
+        03 — CONTACT
+    </span>
+
+
+    <h2
+        class="text-6xl md:text-8xl font-bold mt-8 tracking-tight"
+    >
+
+        Let's make
+
+        <br>
+
+        <span class="text-blue-600">
+            something cool.
+        </span>
+
+    </h2>
+
+
+    <p
+        class="text-lg md:text-xl text-gray-500 mt-8 mb-10"
+    >
+
+        Get in touch or check out my work.
+
     </p>
 
-</body>
 
-</html>
+    <div
+        class="flex flex-wrap justify-center gap-6"
+    >
 
 
-        <!-- =========================
-             FOOTER
-        ========================== -->
+        <!-- TIKTOK -->
 
-        <footer class="text-center py-12">
+        <a
+            href="https://www.tiktok.com/@ismail.ahmed2832"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="comic-button px-8 py-4 bg-black text-white font-bold"
+        >
 
-            <p class="font-bold text-lg">
-                Ismail<span class="text-blue-600">.</span>
-            </p>
+            TikTok ↗
 
-            <p class="text-gray-400 mt-2">
-                © 2026 Ismail Portfolio
-            </p>
+        </a>
 
-            <p class="marker text-gray-400 mt-4 text-sm">
-                designed & created by me
-            </p>
 
-        </footer>
+        <!-- EMAIL -->
 
+        <a
+            href="mailto:Ismailahmed21321@gmail.com"
+            class="comic-button px-8 py-4 bg-blue-500 text-white font-bold"
+        >
+
+            Email Me →
+
+        </a>
 
     </div>
 
- <p class="text-gray-400 mt-2">
-                © Chat gpt Was used to help create IDEAS for this portfolio, but the design and code was created by me
-            </p> 
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer
+    class="text-center py-12"
+>
+
+    <p class="font-bold text-lg">
+
+        Ismail<span class="text-blue-600">.</span>
+
+    </p>
+
+
+    <p class="text-gray-400 mt-2">
+
+        © 2026 Ismail Portfolio
+
+    </p>
+
+
+    <p
+        class="mt-4 text-sm"
+        style="
+            font-family:'Permanent Marker',cursive;
+            color:#999;
+        "
+    >
+
+        designed & created by me
+
+    </p>
+
+</footer>
+
+
+</div>
+
+
+
+<!-- CREDIT -->
+
+<p
+    class="text-gray-400 mt-2 text-center pb-8 px-5"
+>
+
+    © ChatGPT was used to help create ideas for this portfolio,
+    but the design and code was created by me.
+
+</p>
+
+
+<script>
+
+(function () {
+
+    const rig = document.querySelector('.lanyard-rig');
+    const tag = document.querySelector('.lanyard-tag');
+    const strapLeft = document.querySelector('.strap-left');
+    const strapRight = document.querySelector('.strap-right');
+
+    if (!rig || !tag || !strapLeft || !strapRight) return;
+
+    const REST_LENGTH = 340;
+    const MIN_LENGTH = 200;
+    const MAX_LENGTH = 640;
+    const MAX_ANGLE = 80;
+
+    let isDragging = false;
+
+    // Once the drop-in animation finishes, hand off to the
+    // gentle infinite wobble (its own class, so dragging can
+    // cleanly override it without restarting the drop).
+    rig.addEventListener('animationend', function (e) {
+
+        if (e.animationName === 'rigDrop') {
+
+            rig.classList.add('settled');
+
+        }
+
+    });
+
+    function getCurrentRotationDeg(el) {
+
+        const st = window.getComputedStyle(el);
+
+        const transform = st.transform;
+
+        if (!transform || transform === 'none') return 0;
+
+        const match = transform.match(/matrix\(([^)]+)\)/);
+
+        if (!match) return 0;
+
+        const parts = match[1].split(',').map(parseFloat);
+
+        return Math.atan2(parts[1], parts[0]) * (180 / Math.PI);
+
+    }
+
+    function getAnchor() {
+
+        // The rig only ever rotates around its own top-center, so
+        // that point never moves on screen no matter the angle —
+        // it's the true fixed pivot the whole lanyard hangs from.
+        const parent = rig.offsetParent;
+
+        const parentRect = parent ? parent.getBoundingClientRect() : { left: 0, top: 0 };
+
+        return {
+            x: parentRect.left + rig.offsetLeft + rig.offsetWidth / 2,
+            y: parentRect.top + rig.offsetTop
+        };
+
+    }
+
+    function setLength(len) {
+
+        strapLeft.style.height = len + 'px';
+        strapRight.style.height = len + 'px';
+        tag.style.top = len + 'px';
+
+    }
+
+    let anchor = { x: 0, y: 0 };
+
+    function startDrag(clientX, clientY) {
+
+        isDragging = true;
+
+        // Freeze current angle before killing the CSS animation,
+        // so there's no visual jump.
+        const angle = getCurrentRotationDeg(rig);
+
+        rig.style.transform = 'rotate(' + angle + 'deg)';
+
+        rig.classList.remove('settled', 'returning');
+        rig.classList.add('dragging');
+
+        anchor = getAnchor();
+
+    }
+
+    function moveDrag(clientX, clientY) {
+
+        if (!isDragging) return;
+
+        const dx = clientX - anchor.x;
+        const dy = clientY - anchor.y;
+
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        const length = Math.max(MIN_LENGTH, Math.min(MAX_LENGTH, distance));
+
+        let angle = Math.atan2(dx, dy) * (180 / Math.PI);
+
+        angle = Math.max(-MAX_ANGLE, Math.min(MAX_ANGLE, angle));
+
+        rig.style.transform = 'rotate(' + angle + 'deg)';
+
+        setLength(length);
+
+    }
+
+    function endDrag() {
+
+        if (!isDragging) return;
+
+        isDragging = false;
+
+        rig.classList.remove('dragging');
+
+        // Snap back elastically to rest angle + rest length.
+        rig.classList.add('returning');
+
+        rig.style.transform = 'rotate(0deg)';
+
+        setLength(REST_LENGTH);
+
+        window.setTimeout(function () {
+
+            rig.classList.remove('returning');
+
+            rig.style.transform = '';
+
+            strapLeft.style.height = '';
+            strapRight.style.height = '';
+            tag.style.top = '';
+
+            rig.classList.add('settled');
+
+        }, 560);
+
+    }
+
+    // Mouse events
+    tag.addEventListener('mousedown', function (e) {
+
+        startDrag(e.clientX, e.clientY);
+
+        e.preventDefault();
+
+    });
+
+    window.addEventListener('mousemove', function (e) {
+
+        moveDrag(e.clientX, e.clientY);
+
+    });
+
+    window.addEventListener('mouseup', endDrag);
+
+    // Touch events
+    tag.addEventListener('touchstart', function (e) {
+
+        const t = e.touches[0];
+
+        startDrag(t.clientX, t.clientY);
+
+    }, { passive: true });
+
+    window.addEventListener('touchmove', function (e) {
+
+        if (!isDragging) return;
+
+        const t = e.touches[0];
+
+        moveDrag(t.clientX, t.clientY);
+
+    }, { passive: true });
+
+    window.addEventListener('touchend', endDrag);
+
+})();
+
+</script>
+
 </body>
 
 </html>
