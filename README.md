@@ -5,8 +5,9 @@ This website showcases my projects and skills. i am new and trying to save up fo
  pictures nissan gtr and miles colour pop (1)
 
  after countless minutes i have made a minimal and simplistic ui (user interface) 
- 
+ i have now added a about me lanyard and i have a animtion when a circle goes around the word porfolio
 ## Preview
-<img width="568" height="835" alt="Screenshot 2026-08-14 163432" src="https://github.com/user-attachments/assets/d02ddc1c-e49e-480a-ad4b-a9902931545f" />
+
+<img width="957" height="417" alt="image" src="https://github.com/user-attachments/assets/8d8ac9d7-ac77-497f-b2a4-66d4427d2da8" />
 
 
