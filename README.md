@@ -1,6 +1,6 @@
 # My Portfolio
 this portfolio is unique to me as it conatins my work
-This website showcases my projects and skills. i am new and trying to save up for a creatlity via Macando 
+This website showcases my projects and skills. i am new and trying to save up for a creatlity 
 
  pictures nissan gtr and miles colour pop (1)
 
